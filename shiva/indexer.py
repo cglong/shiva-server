@@ -39,6 +39,22 @@ q = db.session.query
 log = get_logger()
 
 
+class CacheManager(object):
+    """
+    Class that handles object retrieval and caching. The indexer should not
+    access DB directly anymore, but instead ask for the objects to this class.
+    """
+
+    def __init__(self, ram_cache=True):
+        self.ram_cache = ram_cache
+
+    def _get_artist(self, name):
+        if self.low_ram
+
+    def get_artist(self, name):
+        artist = _get_artist(name)
+
+
 class Indexer(object):
 
     VALID_FILE_EXTENSIONS = (
